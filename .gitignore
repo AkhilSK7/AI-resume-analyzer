@@ -1,0 +1,57 @@
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+
+# -------------------------
+# Python / Django
+# -------------------------
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.pot
+*.mo
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Django media & static
+media/
+staticfiles/
+
+# Django migrations (optional – keep if you want)
+# **/migrations/
+
+# -------------------------
+# OS / Editor
+# -------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# -------------------------
+# React / Frontend (future)
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+build/
+
+# React environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+
+# -------------------------
+# Misc
+# -------------------------
+coverage/
+.cache/
