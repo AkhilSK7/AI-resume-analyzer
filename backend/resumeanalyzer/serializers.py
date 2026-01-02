@@ -5,4 +5,4 @@ class ResumeSerializer(serializers.ModelSerializer):
     class Meta:
         model=Resume
         fields='__all__'
-        read_only_fields=['user','uploaded_at','extracted_text']
+        read_only_fields=['user','uploaded_at','extracted_text','sections']

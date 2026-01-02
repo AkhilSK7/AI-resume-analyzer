@@ -39,6 +39,21 @@ class ResumeAPIView(ModelViewSet):
 
         resume.extracted_text=extracted_text.strip()
         resume.save()
-
+        if extracted_text:
+            sections={'skills':'','experience':'','education':'','projects':''}
+            current_section=None
+            for line in extracted_text.splitlines():
+                if line.lower()=='skills':
+                    current_section='skills'
+                elif line.lower()=='experience' or line.lower()=='internship':
+                    current_section='experience'
+                elif line.lower()=='education':
+                    current_section='education'
+                elif line.lower()=='projects':
+                    current_section='projects'
+                elif current_section:
+                    sections[current_section]+=line+'\n'
+            resume.sections=sections
+            resume.save()
 
 
