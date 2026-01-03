@@ -17,6 +17,7 @@ class ResumeAPIView(ModelViewSet):
     def get_queryset(self):
         return Resume.objects.filter(user=self.request.user)
     def perform_create(self, serializer):
+        Resume.objects.filter(user=self.request.user).delete()
         resume=serializer.save(user=self.request.user)
         extracted_text = ""
         try:
